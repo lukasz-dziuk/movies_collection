@@ -49,7 +49,7 @@ app.get('/getmovie', async (req, res) => {
             res.status(400).send("Runtime parameter isn't a number")
             return
         }
-        runtime=parseInt(runtime)
+        runtime = parseInt(runtime)
     }
     try {
         res.send(await db.getMovie(genres, runtime))

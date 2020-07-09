@@ -6,9 +6,9 @@ const {
 class Database {
 
 
-    constructor(dbPath){
+    constructor(dbPath) {
 
-        this.dbPath=dbPath
+        this.dbPath = dbPath
     }
 
     async getdb() {

@@ -15,8 +15,10 @@ const genresValidator = async (userGenres, db) => {
     try {
         database = await db.getdb()
     } catch (error) {
-        throw {message: "Server problem",
-         status: 500}
+        throw {
+            message: "Server problem",
+            status: 500
+        }
     }
     userGenres = set_firsts_letters(userGenres) // All genres in database starts with capital letter so i do the same with users input
 
