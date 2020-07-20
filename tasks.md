@@ -1,10 +1,3 @@
-## The Software House - Node.js Developer recruitment task
-
-Hey there!
-
-Not so long ago we decided create a catalogue of our favourite movies (data/db.json) as json. It is hard to update, so we would like to build an API
-for it, however we don't need a database, we still need it as a file.
-
 ### TODOS
 
 1. We need to be able to add a new movie. Each movie should contain information about:
@@ -43,5 +36,3 @@ If we dont provide any parameter, then we should get a single random movie.
 **The algorithm should be unit tested**
 
 **Remember about proper error handling**
-
-**We require code in git repository**
