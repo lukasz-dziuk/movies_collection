@@ -29,8 +29,7 @@
   "lint-staged": {
     "*.{json,js}": [
       "prittier --write", "git add"
-    ],
-    "*": "git add"
+    ]
 
   }
 }
