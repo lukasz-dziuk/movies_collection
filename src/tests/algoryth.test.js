@@ -15,7 +15,7 @@ test('Get movies using genres and runtime parameters', async () => {
 
     for (movie of result) {
         if (!(parseInt(movie.runtime) >= (80) && parseInt(movie.runtime) <= (100))) {
-            throw new Error("result includes a movie with inappropriate runtime")
+            throw new Error("Result includes a movie with inappropriate runtime")
         }
         let i = 0; // testing if at least one of genres is in requested genres
         for (genre of movie.genres) {
@@ -25,7 +25,7 @@ test('Get movies using genres and runtime parameters', async () => {
             }
         }
         if (!i) {
-            throw new Error("result includes a movie with inappropriate genres")
+            throw new Error("Result includes a movie with inappropriate genres")
         }
 
     }
@@ -52,7 +52,7 @@ test('Get movies using genres without runtime parameters', async () => {
             }
         }
         if (!i) {
-            throw new Error("result includes a movie with inappropriate genres")
+            throw new Error("Result includes a movie with inappropriate genres")
         }
 
     }
@@ -92,12 +92,11 @@ test('Add movie', async () => {
     db.movies.pop()
     let updatedDb = JSON.stringify(db, null, 4)
     await fs.writeFile('./data/db_test.json', updatedDb, (err) => {
-        if (err) throw {
-            error: "Database problem"
-        }
+        if (err) 
+        throw new Error("Database problem")
     })
 })
-test('Get single random movie without runtime parameter', async () => {
+test('Get a single random movie without runtime parameter', async () => {
 
     let result = null
     try {
@@ -107,11 +106,11 @@ test('Get single random movie without runtime parameter', async () => {
     }
     expect(typeof result).toBe("object")
     if (!result.hasOwnProperty('id') || !result.hasOwnProperty('genres') || !result.hasOwnProperty('year') || !result.hasOwnProperty('title') || !result.hasOwnProperty('runtime') || !result.hasOwnProperty('director')) {
-        throw new Error('result object is not a valid object')
+        throw new Error('Result object is not a valid object')
     }
 })
 
-test('Get single random movie with runtime parameter', async () => {
+test('Get a single random movie with runtime parameter', async () => {
 
     let result = null
     try {
@@ -121,6 +120,6 @@ test('Get single random movie with runtime parameter', async () => {
     }
     expect(typeof result).toBe("object")
     if (!result.hasOwnProperty('id') || !result.hasOwnProperty('genres') || !result.hasOwnProperty('year') || !result.hasOwnProperty('title') || !result.hasOwnProperty('runtime') || !result.hasOwnProperty('director')) {
-        throw new Error('result object is not a valid object')
+        throw new Error('Result object is not a valid object')
     }
 })

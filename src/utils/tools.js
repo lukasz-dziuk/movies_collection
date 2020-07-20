@@ -48,7 +48,7 @@ const prepereParams = async (params, db) => {
 
     if (!(typeof params.title === "string") || !(params.title.length <= 255)) {
         throw {
-            message: "title must be a string and contains max 255 characters",
+            message: "title parameter must be a string and contains max 255 characters",
             status: 400
         }
     }
@@ -56,7 +56,7 @@ const prepereParams = async (params, db) => {
 
     if (!validator.isNumeric(params.year)) {
         throw {
-            message: "year must be numeric",
+            message: "year parameter must be numeric",
             status: 400
         }
     }
@@ -65,7 +65,7 @@ const prepereParams = async (params, db) => {
 
     if (!validator.isNumeric(params.runtime)) {
         throw {
-            message: "runtime must be numeric",
+            message: "runtime parameter must be numeric",
             status: 400
         }
     }
@@ -81,7 +81,7 @@ const prepereParams = async (params, db) => {
 
     if (!(typeof params.director === "string") || !(params.director.length <= 255)) {
         throw {
-            message: "director must be a string and contains max 255 characters",
+            message: "director parameter must be a string and contains max 255 characters",
             status: 400
         }
     }
@@ -93,7 +93,7 @@ const prepereParams = async (params, db) => {
 
             if (!(typeof params.actors === "string")) {
                 throw {
-                    message: "actors must be a string",
+                    message: "actors parameter must be a string",
                     status: 400
                 }
             }
@@ -103,7 +103,7 @@ const prepereParams = async (params, db) => {
         if (params.plot) {
             if (!(typeof params.plot === "string")) {
                 throw {
-                    message: "plot must be a string",
+                    message: "plot parameter must be a string",
                     status: 400
                 }
             }
@@ -113,7 +113,7 @@ const prepereParams = async (params, db) => {
         if (params.posterUrl) {
             if (!(typeof params.posterUrl === "string")) {
                 throw {
-                    message: "posterUrl must be a string",
+                    message: "posterUrl parameter must be a string",
                     status: 400
                 }
             }
